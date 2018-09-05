@@ -63,7 +63,7 @@
           <a class="nav-link" href="#">Nouveautés</a>
         </li>
         <li class="li-bottom nav-item active">
-          <a class="nav-link" href="#">Artistes</a>
+          <a class="nav-link" [routerLink]="['artistes']">Artistes</a>
         </li>
         <li class="li-bottom nav-item active">
           <a class="nav-link" href="#">Derniers exemplaires</a>
@@ -71,5 +71,5 @@
       </ul>
     </nav>
   </div>
+  <app-breadcrumb [breadcrumb]="breadcrumb" *ngIf="breadcrumb.length !== 0"></app-breadcrumb>
 </header>
-<app-breadcrumb *ngIf="routing.urlKartina !== ''"></app-breadcrumb>

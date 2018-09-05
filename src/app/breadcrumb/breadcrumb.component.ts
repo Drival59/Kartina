@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent implements OnInit {
-
-  constructor() { }
+  faChevronRight = faChevronRight;
+  @Input() breadcrumb : Array<string>;
+  
+  constructor() {
+  }
 
   ngOnInit() {
   }
+
 
 }

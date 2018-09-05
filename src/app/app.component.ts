@@ -7,9 +7,27 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Kartina';
-  urlKartina : string = "LL";
+  urlKartina: string;
+  breadcrumb: Array<string> = new Array<string>();
 
-  onRatingUrlKartinaChanged(eventValue :string) {
-    this.urlKartina = eventValue;
+  onActivate(eventValue: any) {
+    this.breadcrumb = [];
+    if (eventValue.urlKartina !== undefined) {
+      this.urlKartina = eventValue.urlKartina.substring(1);
+      let newUrl: string = "";
+      let firstLetterWord: boolean = true;
+      for (let index = 0; index < this.urlKartina.length; index++) {
+        if (this.urlKartina.charAt(index) === '/') {
+          this.breadcrumb.push(newUrl);
+          firstLetterWord = true;
+        } else if (firstLetterWord === true) {
+          newUrl += this.urlKartina.charAt(index).toUpperCase();
+          firstLetterWord = false;
+        } else {
+          newUrl += this.urlKartina.charAt(index);
+        }
+      }
+      this.breadcrumb.push(newUrl);
+    }
   }
 }

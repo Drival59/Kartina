@@ -8,6 +8,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { PhotographsComponent } from './photographs/photographs.component';
+import { ArtistsComponent } from './artists/artists.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PhotographsComponent } from './photographs/photographs.component';
     WelcomeComponent,
     FooterComponent,
     BreadcrumbComponent,
-    PhotographsComponent
+    PhotographsComponent,
+    ArtistsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { PhotographsComponent } from './photographs/photographs.component';
     RouterModule.forRoot([
       {path : '', component: WelcomeComponent},
       {path: 'photographies', component: PhotographsComponent},
+      {path: 'artistes', component: ArtistsComponent},
       {path : '**', redirectTo: '', pathMatch: 'full'}
     ]),
   ],

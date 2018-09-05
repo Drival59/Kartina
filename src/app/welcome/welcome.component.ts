@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RoutingService } from '../routing.service';
 
 @Component({
   selector: 'app-welcome',
@@ -8,8 +7,7 @@ import { RoutingService } from '../routing.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private routing : RoutingService) { 
-    this.routing.urlKartina = "";
+  constructor() { 
   }
 
   ngOnInit() {

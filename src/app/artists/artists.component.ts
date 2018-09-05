@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-photographs',
-  templateUrl: './photographs.component.html',
-  styleUrls: ['./photographs.component.scss']
+  selector: 'app-artists',
+  templateUrl: './artists.component.html',
+  styleUrls: ['./artists.component.scss']
 })
-export class PhotographsComponent implements OnInit {
+export class ArtistsComponent implements OnInit {
 
   private urlKartina: string;
 
