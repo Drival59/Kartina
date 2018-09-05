@@ -1,0 +1,25 @@
+footer
+{
+  height: 175px;
+  margin-top: 75px;
+}
+.footer-Kartina
+{
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.nav-footer, .right-footer
+{
+  height: 175px;
+  display: flex;
+  align-items: center;
+}
+.right-footer
+{
+  min-width: 40%;
+  justify-content: space-around;
+}

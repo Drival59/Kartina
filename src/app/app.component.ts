@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Kartina';
+  urlKartina : string = "LL";
+
+  onRatingUrlKartinaChanged(eventValue :string) {
+    this.urlKartina = eventValue;
+  }
 }

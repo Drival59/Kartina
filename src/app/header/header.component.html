@@ -1,7 +1,7 @@
 <header>
   <div class="header-top">
 
-    <a [routerLink]="">
+    <a [routerLink]="['']">
       <div class="logo-slogan">
         <div class="logo-Kartina"></div>
         <h1 class="title-Kartina">Kartina</h1>
@@ -57,7 +57,7 @@
     <nav class="nav-Kartina-bottom navbar navbar-expand-md">
       <ul class="navbar-nav nav-content">
         <li class="li-bottom nav-item active">
-          <a class="nav-link" href="#">Photographies</a>
+          <a class="nav-link" [routerLink]="['photographies']">Photographies</a>
         </li>
         <li class="li-bottom nav-item active">
           <a class="nav-link" href="#">Nouveautés</a>
@@ -72,3 +72,4 @@
     </nav>
   </div>
 </header>
+<app-breadcrumb *ngIf="routing.urlKartina !== ''"></app-breadcrumb>
