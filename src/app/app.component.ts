@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ export class AppComponent {
   title = 'Kartina';
   urlKartina: string;
   breadcrumb: Array<string> = new Array<string>();
+  faSpinner = faSpinner;
+  loading: boolean = false;
 
   onActivate(eventValue: any) {
     this.breadcrumb = [];
@@ -30,6 +33,9 @@ export class AppComponent {
       }
       this.breadcrumb.push(newUrl);
     }
+  }
 
+  onEmitLoadingChanges(eventValue: boolean) {
+    this.loading = eventValue;
   }
 }

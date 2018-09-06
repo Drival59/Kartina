@@ -1,5 +1,13 @@
-<app-header [breadcrumb]="breadcrumb"></app-header>
-<main class="container">
+<app-header (emitLoading)="onEmitLoadingChanges($event)" [breadcrumb]="breadcrumb"></app-header>
+<div class="app-breadcrumb">
+    <app-breadcrumb [breadcrumb]="breadcrumb" *ngIf="breadcrumb.length !== 0"></app-breadcrumb>
+</div>
+<main *ngIf="!loading" class="container">
     <router-outlet (activate)="onActivate($event)"></router-outlet>
+</main>
+<main *ngIf="loading" class="loading">
+    <div class="loader">
+        <fa-icon [icon]="faSpinner" size="6x"></fa-icon>
+    </div>
 </main>
 <app-footer></app-footer>

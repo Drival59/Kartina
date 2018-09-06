@@ -1,7 +1,7 @@
 <header>
   <div class="header-top">
 
-    <a [routerLink]="['']">
+    <a (click)="simulateLoading('/')">
       <div class="logo-slogan">
         <div class="logo-Kartina"></div>
         <h1 class="title-Kartina">Kartina</h1>
@@ -57,13 +57,13 @@
     <nav class="nav-Kartina-bottom navbar navbar-expand-md">
       <ul class="navbar-nav nav-content">
         <li class="li-bottom nav-item active">
-          <a class="nav-link" [routerLink]="['photographies']">Photographies</a>
+          <a class="nav-link" (click)="simulateLoading('photographies')">Photographies</a>
         </li>
         <li class="li-bottom nav-item active">
           <a class="nav-link" href="#">Nouveautés</a>
         </li>
         <li class="li-bottom nav-item active">
-          <a class="nav-link" [routerLink]="['artistes']">Artistes</a>
+          <a class="nav-link" (click)="simulateLoading('artistes')">Artistes</a>
         </li>
         <li class="li-bottom nav-item active">
           <a class="nav-link" href="#">Derniers exemplaires</a>
@@ -71,5 +71,4 @@
       </ul>
     </nav>
   </div>
-  <app-breadcrumb [breadcrumb]="breadcrumb" *ngIf="breadcrumb.length !== 0"></app-breadcrumb>
 </header>

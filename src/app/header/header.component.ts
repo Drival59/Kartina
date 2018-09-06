@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { faUser, faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +12,19 @@ export class HeaderComponent implements OnInit {
   faSearch = faSearch;
   faShoppingCart = faShoppingCart;
   @Input() breadcrumb: Array<string>;
+  @Output() emitLoading: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() {
+  constructor(private router : Router) {
   }
 
   ngOnInit() {
+  }
+
+  simulateLoading(url: string) {
+    this.emitLoading.emit(true);
+    setTimeout(() => {
+      this.emitLoading.emit(false);
+    }, 800);
+    this.router.navigate([url]);
   }
 }
