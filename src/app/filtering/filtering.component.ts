@@ -10,10 +10,14 @@ export class FilteringComponent implements OnInit {
 
   private themes;
   private orientations;
+  private formats;
+  private prices;
 
-  constructor(private filtreringService: FilteringService) { 
-    this.orientations = filtreringService.orientations;
-    this.themes = filtreringService.themes;
+  constructor(private filteringService: FilteringService) { 
+    this.orientations = filteringService.orientations;
+    this.themes = filteringService.themes;
+    this.formats = filteringService.formats;
+    this.prices = filteringService.prices;
   }
 
   ngOnInit() {
