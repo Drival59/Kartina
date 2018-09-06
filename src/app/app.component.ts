@@ -30,5 +30,6 @@ export class AppComponent {
       }
       this.breadcrumb.push(newUrl);
     }
+
   }
 }

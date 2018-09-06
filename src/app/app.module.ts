@@ -10,6 +10,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { PhotographsComponent } from './photographs/photographs.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
+import { FilteringComponent } from './filtering/filtering.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ArtistDetailsComponent } from './artist-details/artist-details.componen
     BreadcrumbComponent,
     PhotographsComponent,
     ArtistsComponent,
-    ArtistDetailsComponent
+    ArtistDetailsComponent,
+    FilteringComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+.filtering-block
+{
+    min-width: 400px;
+}
+.filtering-content
+{
+    padding: 3% 5%;
+}
+.filtering-content-title
+{
+    font-size: 1.3rem;
+    border-bottom: 2px solid black;
+    height: 35px;
+}
+.filtering-content-item
+{
+    border-bottom: 2px solid #f0f0f0;
+    width: 100%;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
