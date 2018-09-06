@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { PhotographsComponent } from './photographs/photographs.component';
 import { ArtistsComponent } from './artists/artists.component';
+import { ArtistDetailsComponent } from './artist-details/artist-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ArtistsComponent } from './artists/artists.component';
     FooterComponent,
     BreadcrumbComponent,
     PhotographsComponent,
-    ArtistsComponent
+    ArtistsComponent,
+    ArtistDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { ArtistsComponent } from './artists/artists.component';
       {path : '', component: WelcomeComponent},
       {path: 'photographies', component: PhotographsComponent},
       {path: 'artistes', component: ArtistsComponent},
+      {path: 'artistes/:name', component: ArtistDetailsComponent},
       {path : '**', redirectTo: '', pathMatch: 'full'}
     ]),
   ],

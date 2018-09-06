@@ -20,6 +20,7 @@ export class AppComponent {
         if (this.urlKartina.charAt(index) === '/') {
           this.breadcrumb.push(newUrl);
           firstLetterWord = true;
+          newUrl = "";
         } else if (firstLetterWord === true) {
           newUrl += this.urlKartina.charAt(index).toUpperCase();
           firstLetterWord = false;
