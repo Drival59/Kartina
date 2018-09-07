@@ -1,10 +1,12 @@
 <div class="photographs-main">
-  <app-filtering></app-filtering>
+  <app-filtering (filters)="addFilters($event)"></app-filtering>
   <section class="photographs-results">
     <div class="photographs-results-description">
-      <h3>Noir et blanc</h3>
-      <p>Une photo en noir et blanc est d'une poésie remarquable. Indémodable, la photo noir et blanc met en valeur ses sujets,
-        souligne les contrastres et les lignes, et rehausse la lumière pour un rendu sublime.</p>
+      <h3>Photographies</h3>
+      <p>Les filtres sont : </p>
+      <span *ngFor="let filter of filters">
+        {{filter}}
+      </span>
     </div>
     <div class="sort">
       <span>Trier par :</span>
@@ -23,7 +25,9 @@
       </div>
     </div>
     <div class="photographs-results-pagination">
-      <span><fa-icon [icon]="faChevronLeft" size="xs"></fa-icon><a href=""> Précédent</a></span>
+      <span>
+        <fa-icon [icon]="faChevronLeft" size="xs"></fa-icon><a href=""> Précédent</a>
+      </span>
       <span class="pagination-number">1</span>
       <span class="pagination-number">2</span>
       <span class="pagination-number">3</span>
@@ -32,7 +36,9 @@
       <span class="pagination-number">6</span>
       <span class="pagination-number">7</span>
       <span class="pagination-number">...</span>
-      <span><a href="">Suivant </a><fa-icon [icon]="faChevronRight" size="xs"></fa-icon></span>
+      <span><a href="">Suivant </a>
+        <fa-icon [icon]="faChevronRight" size="xs"></fa-icon>
+      </span>
     </div>
   </section>
 </div>

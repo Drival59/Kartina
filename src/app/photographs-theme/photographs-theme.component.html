@@ -1,3 +1,40 @@
-<p>
-  photographs-theme works!
-</p>
+<div class="photographs-main">
+  <app-filtering></app-filtering>
+  <section class="photographs-results">
+    <div class="photographs-results-description">
+      <h3>{{themeName}}</h3>
+    </div>
+    <div class="sort">
+      <span>Trier par :</span>
+      <a href="" class="active">Nouveautés</a>
+      <a href="">Meilleures ventes</a>
+      <a href="">Prix croissants</a>
+      <a href="">Prix décroissants</a>
+      <span>22 résultats</span>
+    </div>
+    <div class="photographs-results-images">
+      <div class="photographs-results-image" *ngFor="let i of tabPhoto">
+        <img src="assets/noir_blanc.jpg" alt="img noir et blanc" width="100%" />
+        <p>Aurélien Vilette</p>
+        <p>Lion majestueux</p>
+        <p>A partir de 100€</p>
+      </div>
+    </div>
+    <div class="photographs-results-pagination">
+      <span>
+        <fa-icon [icon]="faChevronLeft" size="xs"></fa-icon><a href=""> Précédent</a>
+      </span>
+      <span class="pagination-number">1</span>
+      <span class="pagination-number">2</span>
+      <span class="pagination-number">3</span>
+      <span class="pagination-number">4</span>
+      <span class="pagination-number">5</span>
+      <span class="pagination-number">6</span>
+      <span class="pagination-number">7</span>
+      <span class="pagination-number">...</span>
+      <span><a href="">Suivant </a>
+        <fa-icon [icon]="faChevronRight" size="xs"></fa-icon>
+      </span>
+    </div>
+  </section>
+</div>

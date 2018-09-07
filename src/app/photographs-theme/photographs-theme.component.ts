@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-photographs-theme',
@@ -9,12 +11,23 @@ import { Router } from '@angular/router';
 export class PhotographsThemeComponent implements OnInit {
 
   private urlKartina: string;
-
-  constructor(private router: Router) {
+  private themeName: string;
+  faChevronLeft = faChevronLeft;
+  faChevronRight = faChevronRight;
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.urlKartina = this.router.url;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit() {
+    this.themeName = this.route.snapshot.paramMap.get('themeName');
   }
 
+  ngDoCheck() {
+    this.themeName = this.route.snapshot.paramMap.get('themeName');
+    this.urlKartina = this.router.url;
+  }
+  
+  ngOnDestroy() {
+  }
 }

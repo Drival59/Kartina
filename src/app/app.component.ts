@@ -15,9 +15,9 @@ export class AppComponent {
 
   onActivate(eventValue: any) {
     this.breadcrumb = [];
+    let newUrl: string = "";
     if (eventValue.urlKartina !== undefined) {
       this.urlKartina = eventValue.urlKartina.substring(1);
-      let newUrl: string = "";
       let firstLetterWord: boolean = true;
       for (let index = 0; index < this.urlKartina.length; index++) {
         if (this.urlKartina.charAt(index) === '/') {
@@ -34,7 +34,7 @@ export class AppComponent {
           newUrl += this.urlKartina.charAt(index);
         }
       }
-      this.breadcrumb.push(newUrl);
+      this.breadcrumb.push(newUrl);    
     }
   }
 

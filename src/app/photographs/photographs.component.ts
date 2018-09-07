@@ -10,19 +10,27 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 export class PhotographsComponent implements OnInit {
 
   private urlKartina: string;
+  private filters: Array<string> = new Array<string>();
+
   faChevronLeft = faChevronLeft;
   faChevronRight = faChevronRight;
   
-  private tabPhoto: Array<number> = new Array<number>();
-
   constructor(private router : Router) {
     this.urlKartina = this.router.url;
-    for (let index = 0; index < 24; index++) {
-      this.tabPhoto.push(index);
-    }
   }
 
   ngOnInit() {
   }
 
+  onActivate(eventValue: any) {
+    this.urlKartina = eventValue.urlKartina;
+  }
+
+  ngDoCheck(){
+    this.urlKartina = this.router.url;
+  }
+
+  addFilters(eventValue: Array<string>) {
+    this.filters = eventValue;
+  }
 }
