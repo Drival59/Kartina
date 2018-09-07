@@ -7,14 +7,14 @@
       <fa-icon [icon]="faChevronRight"></fa-icon>
     </li>
     <div class="breadcrumb-items" *ngFor="let item of breadcrumb; index as i">
-        <li>
-            <a *ngIf="(i+1) < breadcrumb.length" [routerLink]="[item | lowercase]">{{item}}</a>
-            <a *ngIf="(i+1) === breadcrumb.length" class="lastItem">{{item}}</a>
-          </li>
-          <li *ngIf="(i+1) < breadcrumb.length">
-            <fa-icon [icon]="faChevronRight"></fa-icon>
-          </li>
+      <li *ngIf="(item) !== 'Par Theme'">
+        <a *ngIf="(i+1) < breadcrumb.length" [routerLink]="[item | lowercase]">{{item}}</a>
+        <span *ngIf="(i+1) === breadcrumb.length" class="lastItem">{{item}}</span>
+      </li>
+      <li *ngIf="(i+1) < breadcrumb.length && (item) !== 'Par Theme'">
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </li>
     </div>
-    
+
   </ol>
 </nav>

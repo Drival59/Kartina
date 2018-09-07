@@ -2,7 +2,7 @@
   <div class="filtering-content">
     <h3 class="filtering-content-title">Thème</h3>
     <p class="filtering-content-item" *ngFor="let theme of themes">
-      <a [routerLink]="['par_theme/'+theme.name]">{{theme.name}}</a>
+      <a [routerLink]="['par_theme/'+theme.name | lowercase | replaceSpaces]">{{theme.name}}</a>
     </p>
   </div>
   <div class="filtering-content">

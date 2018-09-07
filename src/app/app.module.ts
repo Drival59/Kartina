@@ -11,6 +11,8 @@ import { PhotographsComponent } from './photographs/photographs.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
 import { FilteringComponent } from './filtering/filtering.component';
+import { PhotographsThemeComponent } from './photographs-theme/photographs-theme.component';
+import { ReplaceSpacesPipe } from './replace-spaces.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FilteringComponent } from './filtering/filtering.component';
     PhotographsComponent,
     ArtistsComponent,
     ArtistDetailsComponent,
-    FilteringComponent
+    FilteringComponent,
+    PhotographsThemeComponent,
+    ReplaceSpacesPipe
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,7 @@ import { FilteringComponent } from './filtering/filtering.component';
     RouterModule.forRoot([
       {path : '', component: WelcomeComponent},
       {path: 'photographies', component: PhotographsComponent},
+      {path: 'photographies/par_theme/:themeName', component: PhotographsThemeComponent},
       {path: 'artistes', component: ArtistsComponent},
       {path: 'artistes/:name', component: ArtistDetailsComponent},
       {path : '**', redirectTo: '', pathMatch: 'full'}

@@ -27,12 +27,23 @@ export class AppComponent {
         } else if (firstLetterWord === true) {
           newUrl += this.urlKartina.charAt(index).toUpperCase();
           firstLetterWord = false;
+        } else if(this.urlKartina.charAt(index) === '_') {
+          newUrl += " ";
+          firstLetterWord = true;
         } else {
           newUrl += this.urlKartina.charAt(index);
         }
       }
       this.breadcrumb.push(newUrl);
     }
+  }
+
+  simulateLoading() {
+    this.loading = true;
+    window.scroll(0, 0);
+    setTimeout(() => {
+      this.loading = false;
+    }, 500);
   }
 
   onEmitLoadingChanges(eventValue: boolean) {

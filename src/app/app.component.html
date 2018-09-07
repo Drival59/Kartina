@@ -3,7 +3,7 @@
     <app-breadcrumb [breadcrumb]="breadcrumb" *ngIf="breadcrumb.length !== 0"></app-breadcrumb>
 </div>
 <main *ngIf="!loading" class="container">
-    <router-outlet (activate)="onActivate($event)"></router-outlet>
+    <router-outlet (activate)="onActivate($event)" (deactivate)="simulateLoading()"></router-outlet>
 </main>
 <main *ngIf="loading" class="loading">
     <div class="loader">

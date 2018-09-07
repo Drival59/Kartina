@@ -3,7 +3,7 @@
     <div class="index-description">
       <h2>Nouvelles oeuvres</h2>
       <p>La légendaire collection Everest</p>
-      <button class="btn-Kartina btn-photo">Explorez la nouvelle collection <i class="fas fa-caret-right"></i></button>
+      <a [routerLink]="['photographies']"><button class="btn-Kartina btn-photo">Explorez la nouvelle collection <fa-icon [icon]="faCaretRight"></fa-icon></button></a>
     </div>
   </div>
 
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-    <button class="btn-Kartina-reverse ma">Explorez la collection</button>
+    <a [routerLink]="['photographies']"><button class="btn-Kartina-reverse ma">Explorez la collection</button></a>
   </section>
 
   <section class="quatro">
@@ -81,7 +81,7 @@
       <div class="quatro-description">
         <p>Voyage</p>
         <p>Vivez vos rêves</p>
-        <button class="btn-Kartina btn-photo">Parcourir la collection</button>
+        <a [routerLink]="['photographies']"><button class="btn-Kartina btn-photo">Parcourir la collection</button></a> 
       </div>
     </div>
     <div class="quatro-blackAndWhite">
@@ -89,7 +89,7 @@
       <div class="quatro-description">
         <p>Noir & Blanc</p>
         <p>Des oeuvres intemporelles</p>
-        <button class="btn-Kartina btn-photo">Découvrir la collection</button>
+        <a [routerLink]="['photographies']"><button class="btn-Kartina btn-photo">Découvrir la collection</button></a>
       </div>
     </div>
     <div class="quatro-artist">
@@ -97,7 +97,7 @@
       <div class="quatro-description">
         <p>Aurélien Vilette</p>
         <p>Edifices oubliés</p>
-        <button class="btn-Kartina btn-photo">Découvrir l'artiste</button>
+        <a [routerLink]="['artistes']"><button class="btn-Kartina btn-photo">Découvrir l'artiste</button></a>
       </div>
     </div>
     <div class="quatro-last">
@@ -105,7 +105,7 @@
       <div class="quatro-description">
         <p>Derniers exemplaires</p>
         <p>Ne passer pas à côté de votre oeuvre</p>
-        <button class="btn-Kartina btn-photo">Découvrir les oeuvres</button>
+        <a [routerLink]="['photographies']"><button class="btn-Kartina btn-photo">Découvrir les oeuvres</button></a>
       </div>
     </div>
   </section>

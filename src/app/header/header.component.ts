@@ -24,7 +24,8 @@ export class HeaderComponent implements OnInit {
     this.emitLoading.emit(true);
     setTimeout(() => {
       this.emitLoading.emit(false);
-    }, 800);
+    }, 500);
+    window.scroll(0,0);
     this.router.navigate([url]);
   }
 }
