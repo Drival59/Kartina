@@ -8,7 +8,7 @@
   <div class="filtering-content">
     <h3 class="filtering-content-title">Orientation</h3>
     <div class="form-check form-check-inline filtering-content-item" *ngFor="let orientation of orientations">
-      <input (click)="addFilter(orientation.name, $event)" class="form-check-input" type="checkbox" id="{{orientation.name}}" value="{{orientation.name}}">
+      <input (click)="addOrRemoveFilter(orientation.name, $event)" class="form-check-input" type="checkbox" id="{{orientation.name}}" value="{{orientation.name}}">
       <label class="form-check-label" for="{{orientation.name}}">{{orientation.name}}</label>
     </div>
   </div>

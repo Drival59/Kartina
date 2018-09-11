@@ -27,10 +27,13 @@ export class FilteringComponent implements OnInit {
   ngOnInit() {
   }
 
-  addFilter(filter: string, eventValue) {
-    console.log(eventValue.originalTarget.checked);
-    
-    this.filtersTab.push(filter);
+  addOrRemoveFilter(filter: string, eventValue) {
+    if (eventValue.originalTarget.checked) {
+      this.filtersTab.push(filter);
+    } else {
+      let index = this.filtersTab.indexOf(filter);
+      this.filtersTab.splice(index, 1);     
+    }
     this.filters.emit(this.filtersTab);
   }
 }
