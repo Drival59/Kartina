@@ -14,14 +14,14 @@
       <a href="">Meilleures ventes</a>
       <a href="">Prix croissants</a>
       <a href="">Prix décroissants</a>
-      <span>22 résultats</span>
+      <span>{{nbResult}} résultats</span>
     </div>
     <div class="photographs-results-images">
-      <div class="photographs-results-image" *ngFor="let i of tabPhoto">
-        <img src="assets/noir_blanc.jpg" alt="img noir et blanc" width="100%" />
-        <p>Aurélien Vilette</p>
-        <p>Lion majestueux</p>
-        <p>A partir de 100€</p>
+      <div class="photographs-results-image" *ngFor="let photo of tabPhoto">
+        <img src="assets/{{photo.url}}" alt="img noir et blanc" width="100%" />
+        <p>{{photo.artist}}</p>
+        <p>{{photo.name}}</p>
+        <p>A partir de {{photo.price}}€</p>
       </div>
     </div>
     <div class="photographs-results-pagination">
