@@ -11,6 +11,7 @@ export class PhotographsService {
       "name": "Lion majestueux",
       "artist": "HANARD Valentin",
       "price": 150,
+      "interval": "De 100€ à 200€",
       "theme": "Noir et Blanc",
       "orientation": "Paysage",
       "format": "Grand"
@@ -20,6 +21,7 @@ export class PhotographsService {
       "name": "Le mont Everest",
       "artist": "DENYS Manu",
       "price": 299,
+      "interval": "De 200€ à 500€",
       "theme": "Voyage",
       "orientation": "Panoramique",
       "format": "Collector"
@@ -29,6 +31,7 @@ export class PhotographsService {
       "name": "En famille",
       "artist": "CARPENTIER Maxime",
       "price": 99,
+      "interval": "De 50€ à 100€",
       "theme": "Life",
       "orientation": "Paysage",
       "format": "Classique"
@@ -38,6 +41,7 @@ export class PhotographsService {
       "name": "Bus sur la plage",
       "artist": "LOISEL Pauline",
       "price": 149,
+      "interval": "De 100€ à 200€",
       "theme": "Life",
       "orientation": "Carré",
       "format": "Géant"

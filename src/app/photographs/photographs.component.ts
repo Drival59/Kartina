@@ -34,7 +34,15 @@ export class PhotographsComponent implements OnInit {
 
   ngDoCheck(){
     this.urlKartina = this.router.url;
-    console.log(this.filters);
+    this.tabPhoto.forEach(photo => {
+      this.filters.forEach(filter => {
+        if (photo.orientation.includes(filter) || photo.format.includes(filter) || photo.interval.includes(filter)) {
+          console.log("la " + photo.name + " CONTIENT le filtre " + filter);
+        }
+      });
+      
+    });
+    
   }
 
   addFilters(eventValue: Array<string>) {
