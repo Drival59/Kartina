@@ -1,12 +1,8 @@
 <div class="photographs-main">
-  <app-filtering (filters)="addFilters($event)"></app-filtering>
+  <app-filtering (ratingFiltersOrientation)="addFiltersOrientation($event)" (ratingFiltersFormat)="addFiltersFormat($event)" (ratingFiltersPrice)="addFiltersPrice($event)"></app-filtering>
   <section class="photographs-results">
     <div class="photographs-results-description">
       <h3>Photographies</h3>
-      <p>Les filtres sont : </p>
-      <span *ngFor="let filter of filters">
-        {{filter}}
-      </span>
     </div>
     <div class="sort">
       <span>Trier par :</span>
@@ -17,11 +13,14 @@
       <span>{{nbResult}} résultats</span>
     </div>
     <div class="photographs-results-images">
-      <div class="photographs-results-image" *ngFor="let photo of tabPhoto">
-        <img src="assets/{{photo.url}}" alt="img noir et blanc" width="100%" />
+      <div class="photographs-results-image" *ngFor="let photo of tabShowPhoto">
+        <img src="assets/{{photo.url}}" alt="{{photo.url}}" width="100%" />
         <p>{{photo.artist}}</p>
         <p>{{photo.name}}</p>
         <p>A partir de {{photo.price}}€</p>
+      </div>
+      <div *ngIf="nbResult == 0">
+        <p>Aucuns résultats selon vos critères de recherche.</p>
       </div>
     </div>
     <div class="photographs-results-pagination">

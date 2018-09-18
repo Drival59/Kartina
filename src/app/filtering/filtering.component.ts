@@ -13,9 +13,13 @@ export class FilteringComponent implements OnInit {
   private orientations;
   private formats;
   private prices;
-  private filtersTab: Array<string> = new Array<string>();
+  private filtersOrientation: Array<string> = new Array<string>();
+  private filtersFormat: Array<string> = new Array<string>();
+  private filtersPrice: Array<string> = new Array<string>();
 
-  @Output() filters: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();
+  @Output() ratingFiltersOrientation: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();
+  @Output() ratingFiltersFormat: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();
+  @Output() ratingFiltersPrice: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();
 
   constructor(private filteringService: FilteringService, private router: Router) { 
     this.orientations = filteringService.orientations;
@@ -27,13 +31,35 @@ export class FilteringComponent implements OnInit {
   ngOnInit() {
   }
 
-  addOrRemoveFilter(filter: string, eventValue) {
+  addOrRemoveFilterOrientation(filter: string, eventValue) {
     if (eventValue.originalTarget.checked) {
-      this.filtersTab.push(filter);
+      this.filtersOrientation.push(filter);
     } else {
-      let index = this.filtersTab.indexOf(filter);
-      this.filtersTab.splice(index, 1);     
+      let index = this.filtersOrientation.indexOf(filter);
+      this.filtersOrientation.splice(index, 1);     
     }
-    this.filters.emit(this.filtersTab);
+    this.ratingFiltersOrientation.emit(this.filtersOrientation);
   }
+
+  addOrRemoveFilterFormat(filter: string, eventValue) {
+    if (eventValue.originalTarget.checked) {
+      this.filtersFormat.push(filter);
+    } else {
+      let index = this.filtersFormat.indexOf(filter);
+      this.filtersFormat.splice(index, 1);     
+    }
+    this.ratingFiltersFormat.emit(this.filtersFormat);
+  }
+
+  addOrRemoveFilterPrice(filter: string, eventValue) {
+    if (eventValue.originalTarget.checked) {
+      this.filtersPrice.push(filter);
+    } else {
+      let index = this.filtersPrice.indexOf(filter);
+      this.filtersPrice.splice(index, 1);     
+    }
+    this.ratingFiltersPrice.emit(this.filtersPrice);
+  }
+
+
 }
